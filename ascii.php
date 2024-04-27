@@ -33,7 +33,7 @@ if (isset($_GET['img'])) {
     $height = isset($_GET['height']) ? intval($_GET['height']) : 50;
     
     $imageData = file_get_contents($imageUrl);
-    $tmpImagePath = 'put_a_temp_image_here';
+    $tmpImagePath = 'temp_img.jpg';
     file_put_contents($tmpImagePath, $imageData);
     $asciiArt = imageToAscii($tmpImagePath, $width, $height);
     unlink($tmpImagePath);
